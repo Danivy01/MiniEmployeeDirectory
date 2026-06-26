@@ -1,7 +1,11 @@
+using MiniEmployeeDirectory.Interface;
+using MiniEmployeeDirectory.Service;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
 var app = builder.Build();
 
